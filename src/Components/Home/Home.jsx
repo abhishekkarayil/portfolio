@@ -18,7 +18,7 @@ const Home = () => {
 
         <div className='flex pt-25 w-full '>
           <div className='flex flex-col w-full space-y-4 max-w-3xl'>
-            <h1 className='text-grey-500 text-5xl font-medium leading-snug'>Hi there! I'm Abhishek.</h1>
+            <h1 className=' text-gray-600 text-5xl font-medium leading-snug'>Hi there! I'm Abhishek.</h1>
             <p className='text-xl max-w-130 leading-relaxed mt-4 '><span className='font-semibold'>Web Developer</span> with 1 year of expeariance creating responsive, user-friendly app using react.</p>
           </div>
           <div className='flex flex-col items-end w-full text-right text-grey-300 text-sm space-y-2 font-mono'>
