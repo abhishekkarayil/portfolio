@@ -36,7 +36,7 @@ function Header() {
 
 
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md md:hidden">
+        <div className="absolute top-16 left-0 w-full h-screen bg-amber-500 shadow-md md:hidden">
           <ul className="flex flex-col items-center py-5 space-y-4">
             <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition ">
               Home
