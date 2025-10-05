@@ -14,15 +14,15 @@ import Time from './Time';
 
 const Home = () => {
   return (
-    <section className='w-full relative flex flex-col  justify-center px-50 '>
+    <section className='w-full relative flex flex-col  justify-center lg:px-50 px-5 '>
       <div className='flex flex-col justify-between items-start'>
 
-        <div className='flex pt-25 w-full '>
-          <div className='flex flex-col w-full space-y-4 max-w-3xl'>
-            <h1 className=' text-gray-600 text-5xl font-medium leading-snug'>Hi there! I'm Abhishek.</h1>
-            <p className='text-xl max-w-130 text-[#131313] leading-relaxed mt-4 '><span className='font-semibold'>Web Developer</span> with 1 year of expeariance creating responsive, user-friendly app using react.</p>
+        <div className='flex pt-25 w-full lg:flex-row flex-col lg:space-x-20 lg:space-y-0 space-y-6 '>
+          <div className='flex flex-col w-full space-y-4'>
+            <h1 className=' text-gray-600 lg:text-5xl text-3xl font-medium leading-snug'>Hi there! I'm Abhishek.</h1>
+            <p className='lg:text-xl text-l max-w-130 text-[#131313] leading-relaxed mt-4 '><span className='font-semibold'>Web Developer</span> with 1 year of expeariance creating responsive, user-friendly app using react.</p>
           </div>
-          <div className='flex flex-col items-end w-full text-right text-[#5B5B5B] text-sm space-y-2 font-mono'>
+          <div className='flex flex-col lg:items-end w-full lg:text-right text-[#5B5B5B] text-sm space-y-2 font-mono'>
             <p>CURENT LOCATION: INDIA</p>
             <p className='flex items-center '>
               <span className='w-2 h-2 bg-green-500 rounded-full mr-2'></span>LOCAL TIME: <Time/></p>
@@ -41,7 +41,7 @@ const Home = () => {
             <a href="https://linkedin.com" target='_blank' rel='noreferrer'>
               <FaLinkedinIn className='hover:text-black' /></a>
           </div>
-          <img src={ptImage} alt="abhishek" className='absolute w-[300px] h-[350px] ml-180 bottom-[0.5px]' />
+          <img src={ptImage} alt="abhishek" className='absolute lg:w-[300px] lg:h-[350px] lg:ml-180 lg:bottom-[0.5px]' />
           <button className='absolute bg-[#4A4A4A] text-white px-14 py-1.5 rounded-4xl bottom-0 right-1 outline-white outline-9 hover:bg-[#464444] hover:cursor-pointer'>Say Hello</button>
           
         </div>
