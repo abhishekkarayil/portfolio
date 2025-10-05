@@ -6,7 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 function Header() {
    const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className='flex justify-between items-center bg-white px-6 py-5 md:px-15 lg:px-50 shadow-md'>
+    <header className='flex justify-between items-center bg-white px-6 py-5 md:px-15 lg:px-50 shadow-md fixed top-0 left-0 w-full z-10'>
         <div className='text-xl font-poppins tracking-widest text-gray-600'>PORTFOLIO</div>
         <nav className='hidden md:block' >
           
@@ -36,7 +36,7 @@ function Header() {
 
 
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full h-screen bg-amber-500 shadow-md md:hidden">
+        <div className="absolute top-16 left-0 w-full h-screen bg-amber-500 shadow-md md:hidden z-10">
           <ul className="flex flex-col items-center py-5 space-y-4">
             <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition ">
               Home
