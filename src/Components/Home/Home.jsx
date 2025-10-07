@@ -33,7 +33,7 @@ const Home = () => {
         <div className='w-full flex  relative  mt-5 '>
           <img src={bgImage} alt="Background"  loading="lazy"decoding="async" className='bg-cover grayscale-100 w-full lg:h-70' />
 
-          <div className=' absolute  flex gap-2 ml-2 text-xs  md:gap-6 md:ml-3 lg:gap-8 lg:text-base  md:mt-1 text-gray-600 lg:ml-6 rounded-3xl lg:p-2'>
+          <div className=' absolute  flex gap-[7px] ml-1 text-xs  md:gap-6 md:ml-3 lg:gap-8 lg:text-base  md:mt-1 text-gray-600 lg:ml-6 rounded-3xl lg:p-2'>
             <a href="https://instagram.com" target='_blank' rel='noreferrer'>
               <FaInstagram className='hover:text-black' /> </a>
             <a href="https://twitter.com" target='_blank' rel='noreferrer'>
@@ -41,8 +41,9 @@ const Home = () => {
             <a href="https://linkedin.com" target='_blank' rel='noreferrer'>
               <FaLinkedinIn className='hover:text-black' /></a>
           </div>
-          <img src={ptImage} alt="abhishek" oading="lazy"decoding="async" className='absolute lg:w-[300px] h-35 ml-60 md:w-50 md:h-[245px] md:ml-100 bottom-[.8px] lg:h-[350px] lg:ml-180 lg:bottom-[0.5px]' />
-          <button className='absolute bg-[#4A4A4A] text-white text-[9px] px-3 py:1.5 outline-5 md:text-xs md:px-6 md:py-1 md:right-2 lg:text-xl lg:px-10 lg:py-1 rounded-4xl bottom-0 right-1 outline-white md:outline-7 lg:outline-5 hover:bg-[#464444] hover:cursor-pointer'>Say Hello</button>
+          <img src={ptImage} alt="abhishek" oading="lazy"decoding="async" className='absolute lg:w-[300px] h-31 ml-55 md:w-50 md:h-[245px] md:ml-100 bottom-[.8px] lg:h-[350px] lg:ml-180 lg:bottom-[0.5px]' />
+          <button className='absolute bg-[#4A4A4A] text-white text-[9px] px-3 py:1.5 outline-4
+           md:text-xs md:px-6 md:py-1 md:right-2 lg:text-xl lg:px-10 lg:py-1 rounded-4xl bottom-0 right-1 outline-white md:outline-7 lg:outline-5 hover:bg-[#464444] hover:cursor-pointer'>Say Hello</button>
           
         </div>
         
