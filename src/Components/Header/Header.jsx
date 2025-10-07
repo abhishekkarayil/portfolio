@@ -36,22 +36,41 @@ function Header() {
 
 
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full h-screen bg-amber-500 shadow-md md:hidden z-10">
-          <ul className="flex flex-col items-center py-5 space-y-4">
-            <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition ">
-              Home
-            </li>
-            <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition">
-              About
-            </li>
-            <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition">
-              Works
-            </li>
-            <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition">
-              Contact
-            </li>
-          </ul>
-        </div>
+        // <div className="absolute top-16 left-0 w-full h-screen bg-white  shadow-md md:hidden z-10">
+        //   <ul className="flex flex-col items-center py-5 space-y-4">
+        //     <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition ">
+        //       Home
+        //     </li>
+        //     <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition">
+        //       About
+        //     </li>
+        //     <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition">
+        //       Works
+        //     </li>
+        //     <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition">
+        //       Contact
+        //     </li>
+        //   </ul>
+        // </div>
+        <div className="absolute top-16 left-0 w-full h-screen bg-white shadow-md md:hidden z-10 
+                transition-all duration-700 ease-in-out 
+                transform translate-y-0 opacity-100">
+  <ul className="flex flex-col items-center py-5 space-y-4 ">
+    <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition shadow-md w-full flex justify-center items-center py-5">
+      Home
+    </li>
+    <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition shadow-md w-full flex justify-center items-center py-2">
+      About
+    </li>
+    <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition shadow-md w-full flex justify-center items-center py-2">
+      Works
+    </li>
+    <li className="text-gray-700 font-medium hover:text-black cursor-pointer transition shadow-md w-full flex justify-center items-center py-2">
+      Contact
+    </li>
+  </ul>
+</div>
+
       )}
     </header>
   );
