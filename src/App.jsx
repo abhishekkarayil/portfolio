@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import viteLogo from '/vite.svg'
 import Headers from './Components/Header/Header'
 import './App.css'
 import Home from './Components/Home/Home'
+import Works from './Components/Works/Works'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <>
     <Headers />
     <Home />
+    <Works/>
 
       
     </>
