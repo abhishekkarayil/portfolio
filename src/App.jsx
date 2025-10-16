@@ -5,6 +5,7 @@ import Headers from './Components/Header/Header'
 import './App.css'
 import Home from './Components/Home/Home'
 import Works from './Components/Works/Works'
+import AboutMe from './Components/AboutMe/AboutMe'
 
 
 function App() {
@@ -12,9 +13,10 @@ function App() {
 
   return (
     <>
-    <Headers />
+    {/* <Headers />
     <Home />
-    <Works/>
+    <Works/> */}
+    <AboutMe/>
 
       
     </>
