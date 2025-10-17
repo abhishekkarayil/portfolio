@@ -13,9 +13,9 @@ function App() {
 
   return (
     <>
-    {/* <Headers />
+    <Headers />
     <Home />
-    <Works/> */}
+    <Works/>
     <AboutMe/>
 
       

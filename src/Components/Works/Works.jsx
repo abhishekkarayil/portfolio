@@ -68,7 +68,7 @@ function Works() {
                 </div>
             </div>
 
-            {/* Swiper for mobile */}
+           
             <div className="block md:hidden px-4">
                 <Swiper
                     modules={[Pagination]}
