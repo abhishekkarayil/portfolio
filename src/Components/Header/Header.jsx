@@ -20,22 +20,20 @@ function Header() {
       <div className='text-xl font-poppins tracking-widest text-gray-600'>PORTFOLIO</div>
       <nav className='hidden md:block'>
         <ul className="flex items-center ">
-          <li className="text-[#333] font-medium sm-text-l px-5 py-1.2 cursor-pointer border-gray-700 hover:text-gray-700 md:px-5 md:py-1.5 hover:bg-gray-100 ">
-            Home
-          </li>
-          <li className="text-[#333] font-medium cursor-pointer px-5 py-1.2 md:px-5 md:py-1.5  hover:text-gray-700">
-            About
-          </li>
-          <li className="text-[#333] font-medium cursor-pointer px-5 py-1.2 md:px-5 md:py-1.5 hover:text-gray-700">
-            Works
-          </li>
-          <li className="text-[#333] font-medium cursor-pointer px-5 py-1.2 md:px-5 md:py-1.5  hover:text-gray-700">
-            Contact
-          </li>
+          {
+            menuItems.map((item, index) => (
+              <li 
+                key={index}
+                className="text-[#333] font-medium sm-text-l px-5 py-1.2 cursor-pointer border-gray-700 hover:text-gray-700 md:px-5 md:py-1.5 hover:bg-gray-100 ">
+                {item.label}
+              </li>
+            ))    
+          }
+          
         </ul>
       </nav>
 
-      {/* Only show StaggeredMenu on mobile */}
+    
       <div className="md:hidden w-full h-full fixed top-0 flex z-40">
         <StaggeredMenu
           position="left"

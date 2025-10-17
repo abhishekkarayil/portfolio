@@ -17,12 +17,19 @@ const Home = () => {
     <section className='w-full relative flex flex-col  justify-center md:px-15 lg:px-50 px-5 mt-20 '>
       <div className='flex flex-col justify-between items-start'>
 
-        <div className='flex pt-25 w-full md:flex-row lg:flex-row flex-col lg:space-x-20 lg:space-y-0 space-y-6 '>
-          <div className='flex flex-col w-full space-y-4'>
-            <h1 className=' text-gray-600 lg:text-5xl text-2xl font-medium leading-snug'>Hi there! I'm Abhishek.</h1>
+        <div className='flex pt-25 w-full md:flex-row flex-col items-center lg:space-x-20 lg:space-y-0 space-y-6 '>
+            <div className='flex flex-col items-end text-sm md:hidden  w-full text-right text-[#5B5B5B]  space-y-2 font-mono'>
+            <p>CURENT LOCATION: INDIA</p>
+            <p className='flex items-center '>
+              <span classNsmame='w-2 h-2 bg-green-500 rounded-full mr-2'></span>LOCAL TIME: <Time/></p>
+
+          </div>
+          <div className='flex flex-col w-full'>
+            
+            <h1 className=' text-gray-600 lg:text-5xl text-3xl font-medium leading-snug'>Hi there! <br /> I'm Abhishek.</h1>
             <p className='lg:text-xl text-sm max-w-130 text-[#131313] leading-relaxed mt-4 '><span className='font-semibold'>Web Developer</span> with 1 year of expeariance creating responsive, user-friendly app using react.</p>
           </div>
-          <div className='flex flex-col lg:items-end text-sm  w-full md:items-end md:text-right lg:text-right text-[#5B5B5B]  space-y-2 font-mono'>
+          <div className='md:flex flex-col items-end text-sm hidden  w-full text-right text-[#5B5B5B]  space-y-2 font-mono'>
             <p>CURENT LOCATION: INDIA</p>
             <p className='flex items-center '>
               <span classNsmame='w-2 h-2 bg-green-500 rounded-full mr-2'></span>LOCAL TIME: <Time/></p>
@@ -33,7 +40,7 @@ const Home = () => {
         <div className='w-full flex  relative  mt-5 '>
           <img src={bgImage} alt="Background"  loading="lazy"decoding="async" className='bg-cover grayscale-100 w-full lg:h-70' />
 
-          <div className=' absolute  flex gap-[9px] ml-2 mt-1 text-[6px]  md:gap-6 md:ml-3 lg:gap-8 lg:text-base  md:mt-1 text-gray-600 lg:ml-6 rounded-3xl lg:p-2'>
+          <div className=' absolute  flex gap-[9px] ml-2 mt-1 text-[6px]  md:gap-5 md:ml-3 lg:gap-8 md:text-base  md:mt-1 text-gray-600 lg:ml-6 rounded-3xl lg:p-2'>
             <a href="https://instagram.com" target='_blank' rel='noreferrer'>
               <FaInstagram className='hover:text-black' /> </a>
             <a href="https://twitter.com" target='_blank' rel='noreferrer'>
