@@ -5,6 +5,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 function AboutMe() {
     const skills = ["My Expertise", "HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS", "Bootstrap"]
     
+    
     return (
         <div className='lg:px-50 md:px-15 mt-15 px-2.5'>
             <div className='flex justify-center flex-col items-center relative shadow-2xl rounded-2xl gap-3.5 '>
@@ -62,8 +63,8 @@ function AboutMe() {
                     ))}
                 </div>
                 
-                <div className='flex lg:mt-8  justify-center items-center p-5'>
-                    <button className='bg-[#4A4A4A] text-[#FFFFFF] text-sm md:text-base rounded-4xl md:w-35 md:h-10 w-35 h-8 hover:bg-[#5b5959]'>
+                <div className='flex   justify-center items-center p-5'>
+                    <button className='bg-[#4A4A4A] text-[#FFFFFF] text-sm md:text-base rounded-4xl md:w-35 md:h-10 w-35 h-8 hover:bg-[#5b5959] hover:cursor-pointer'>
                         Read More
                     </button>            
                 </div>

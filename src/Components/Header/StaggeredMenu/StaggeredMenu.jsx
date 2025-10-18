@@ -277,12 +277,10 @@ export const StaggeredMenu = ({
 
     textCycleAnimRef.current?.kill();
 
-    // Use icons directly, not keys for switching
     const currentIcon = opening ? <RiMenu3Fill key="menu" size="1.2em" /> : <IoCloseSharp key="close" size="1.2em" />;
     const targetIcon = opening ? <IoCloseSharp key="close" size="1.2em" /> : <RiMenu3Fill key="menu" size="1.2em" />;
     const cycles = 3;
 
-    // Build sequence of icons for animation
     const seq = [currentIcon];
     let lastIsMenu = opening;
     for (let i = 0; i < cycles; i++) {

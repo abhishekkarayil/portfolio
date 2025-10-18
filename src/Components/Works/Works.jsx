@@ -147,7 +147,7 @@ function Works() {
             </div>
 
             <div className='flex lg:mt-8 mt-8 justify-center items-center'>
-                <button className='bg-[#4A4A4A] text-[#FFFFFF] text-sm md:text-base rounded-4xl md:w-49 md:h-10 w-35 h-8 hover:bg-[#5b5959]'>
+                <button className='bg-[#4A4A4A] text-[#FFFFFF] text-sm md:text-base rounded-4xl md:w-49 md:h-10 w-35 h-8 hover:bg-[#5b5959] hover:cursor-pointer'>
                     View All Works
                 </button>            
             </div>
