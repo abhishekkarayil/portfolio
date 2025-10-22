@@ -12,7 +12,7 @@ import Time from './Time';
 
 
 const Home = () => {
-  // local socials with icons (don't import from Header)
+ 
   const socialItems = [
     { label: 'Instagram', link: 'https://instagram.com', icon: <FaInstagram /> },
     { label: 'X', link: 'https://twitter.com', icon: <FaXTwitter /> },
