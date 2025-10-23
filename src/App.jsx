@@ -7,18 +7,22 @@ import Home from './Components/Home/Home'
 import Works from './Components/Works/Works'
 import AboutMe from './Components/AboutMe/AboutMe'
 import Contact from './Components/Contact/Contact'
-
+import Footer from './Components/Footer/Footer'
+import Projects from './Components/Featured-Projects/Projects.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Headers />
+    {/* <Headers />
     <Home />
     <Works/>
     <AboutMe/>
     <Contact/>
+    <Footer/> */}
+
+    <Projects/>
 
       
     </>
