@@ -1,39 +1,54 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import StaggeredMenu from './StaggeredMenu/StaggeredMenu';
 
 function Header() {
+  const location = useLocation();
+
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
     { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
     { label: 'Works', ariaLabel: 'View our works', link: '/works' },
-    { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
+    { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' },
   ];
 
   const socialItems = [
     { label: 'Twitter', link: 'https://twitter.com' },
     { label: 'GitHub', link: 'https://github.com' },
-    { label: 'LinkedIn', link: 'https://linkedin.com' }
+    { label: 'LinkedIn', link: 'https://linkedin.com' },
   ];
 
   return (
-    <header className='flex justify-between items-center bg-white px-6 py-5 md:px-15 lg:px-50 shadow-md fixed top-0 left-0 w-full z-10'>
-      <div className='text-xl font-poppins tracking-widest text-gray-600'>PORTFOLIO</div>
-      <nav className='hidden md:block'>
-        <ul className="flex items-center ">
-          {
-            menuItems.map((item, index) => (
-              <li 
-                key={index}
-                className="text-[#333] font-medium sm-text-l px-5 py-1.2 cursor-pointer border-gray-700 hover:text-gray-700 md:px-5 md:py-1.5 hover:bg-gray-100 ">
+    <header className="flex justify-between items-center bg-white px-6 py-5 md:px-15 lg:px-50 shadow-md fixed top-0 left-0 w-full z-10">
+      
+      <div className="text-xl font-poppins tracking-widest text-gray-600">
+        PORTFOLIO
+      </div>
+
+   
+      <nav className="hidden md:block">
+        <ul className="flex items-center">
+          {menuItems.map((item, index) => (
+            <li key={index} className="px-5">
+              <Link
+                to={item.link}
+                aria-label={item.ariaLabel}
+                className={`font-medium cursor-pointer transition-all text-[#333] 
+                  hover:text-gray-700 hover:bg-gray-100 px-3 py-1.5 rounded-md 
+                  ${
+                    location.pathname === item.link
+                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      : ''
+                  }`}
+              >
                 {item.label}
-              </li>
-            ))    
-          }
-          
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
 
-    
+      {/* Mobile Menu */}
       <div className="md:hidden w-full h-full fixed top-0 flex z-40">
         <StaggeredMenu
           position="left"
@@ -45,7 +60,6 @@ function Header() {
           openMenuButtonColor="#111111"
           changeMenuColorOnOpen={true}
           colors={['#B19EEF', '#5227FF']}
-      
           accentColor="#ff6b6b"
           isFixed={true}
         />

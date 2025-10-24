@@ -41,8 +41,7 @@ function Projects() {
   ];
 
   return (
-    <>
-      <Headers />
+   
 
       <section className="py-16 sm:py-20 bg-white" id="projects">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,8 +105,7 @@ function Projects() {
         </div>
       </section>
 
-      <Footer />
-    </>
+     
   );
 }
 

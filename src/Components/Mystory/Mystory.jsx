@@ -28,8 +28,8 @@ function About() {
   ];
 
   return (
-    <>
-      <Headers />
+   
+   
 
       <div className="min-h-screen bg-white mt-20 text-gray-800 px-5 sm:px-8 md:px-16 lg:px-50 py-16">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 md:gap-14">
@@ -140,8 +140,7 @@ function About() {
         </div>
       </div>
 
-      <Footer />
-    </>
+     
   );
 }
 
