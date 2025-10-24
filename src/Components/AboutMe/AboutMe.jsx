@@ -52,7 +52,7 @@ function AboutMe() {
                     {skills.map((skill, index) => (
                         <span
                             key={index}
-                            className={`lg:px-7 md:px-2 px-4 py-1.5 text-sm rounded-md shadow-sm hover:cursor-pointer ${
+                            className={`lg:px-7 md:px-2 px-4 py-1.5 text-sm rounded-md shadow-sm  ${
                                 index === 0
                                     ? "bg-[#333] text-white hover:bg-[#4b4b4b] transition-all"
                                     : "bg-[#F5F5F5] text-[#4B4B4B] border hover:bg-[#e8e5e5] border-gray-200"

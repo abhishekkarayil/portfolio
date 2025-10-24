@@ -52,7 +52,7 @@ function Projects() {
           </h2>
 
        
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-10 hover:cursor-pointer">
             {projects.map((project, index) => (
               <div
                 key={index}

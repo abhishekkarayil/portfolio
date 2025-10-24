@@ -9,6 +9,8 @@ import AboutMe from './Components/AboutMe/AboutMe'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
 import Projects from './Components/Featured-Projects/Projects.jsx'
+import Mystory from './Components/Mystory/Mystory'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +24,7 @@ function App() {
     <Contact/>
     <Footer/> */}
 
-    <Projects/>
+    <Mystory/>
 
       
     </>

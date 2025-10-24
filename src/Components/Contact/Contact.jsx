@@ -67,7 +67,7 @@ function Contact() {
           </div>
         </div>
 
-        {/* Right Section (Form) */}
+      
         <div className="bg-white rounded-3xl w-full sm:w-[90%] md:w-[420px] lg:w-[480px] shadow-2xl p-6 sm:p-8 md:p-10 flex-shrink-0">
           <form className="space-y-5">
             <input
