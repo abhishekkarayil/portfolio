@@ -1,8 +1,7 @@
 import React from "react";
 import Rectangle26 from "../../assets/Images/Rectangle 26.webp";
 import { FiArrowUpRight } from "react-icons/fi";
-import Footer from "../Footer/Footer";
-import Headers from "../Header/Header";
+
 
 function Projects() {
   const projects = [

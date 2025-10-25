@@ -9,7 +9,6 @@ import 'swiper/css/navigation';
 
 import Rectangle26 from '../../assets/Images/Rectangle 26.webp';
 import { Link } from 'react-router-dom';
-import Projects from '../Featured-Projects/Projects';
 
 function Works() {
     const navigationPrevRef = useRef(null);
