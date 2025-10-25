@@ -33,11 +33,11 @@ function Header() {
               <Link
                 to={item.link}
                 aria-label={item.ariaLabel}
-                className={`font-medium cursor-pointer transition-all text-[#333] 
-                  hover:text-gray-700 hover:bg-gray-100 px-3 py-1.5 rounded-md 
+                className={`font-medium cursor-pointer transition-all text-[#A5A5A5] 
+                  hover:text-gray-700 hover:bg-gray-100 px-4 py-1 rounded-full 
                   ${
                     location.pathname === item.link
-                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      ? 'text-black border  border-[#1d1c1c]'
                       : ''
                   }`}
               >
@@ -48,7 +48,6 @@ function Header() {
         </ul>
       </nav>
 
-      {/* Mobile Menu */}
       <div className="md:hidden w-full h-full fixed top-0 flex z-40">
         <StaggeredMenu
           position="left"

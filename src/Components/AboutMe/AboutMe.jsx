@@ -1,6 +1,7 @@
 import React from 'react'
 import myPhoto from "../../assets/Images/Rectangle 31.webp"
 import { MdOutlineArrowOutward } from "react-icons/md";
+import { Link, useLocation } from 'react-router-dom';
 
 function AboutMe() {
     const skills = ["My Expertise", "HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS", "Bootstrap"]
@@ -64,9 +65,10 @@ function AboutMe() {
                 </div>
                 
                 <div className='flex   justify-center items-center p-5'>
-                    <button className='bg-[#4A4A4A] text-[#FFFFFF] text-sm md:text-base rounded-4xl md:w-35 md:h-10 w-35 h-8 hover:bg-[#5b5959] hover:cursor-pointer'>
+                   <Link to='/about'> <button className='bg-[#4A4A4A] text-[#FFFFFF] text-sm md:text-base rounded-4xl md:w-35 md:h-10 w-35 h-8 hover:bg-[#5b5959] hover:cursor-pointer'>
                         Read More
-                    </button>            
+                    </button> 
+                    </Link>           
                 </div>
             </div>
         </div>

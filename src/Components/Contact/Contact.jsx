@@ -11,19 +11,17 @@ function Contact() {
   ];
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        minHeight: "100vh",
-      }}
-      className="flex items-center justify-center py-16 px-4 sm:px-6 md:px-10"
-    >
-      {/* Main Container */}
+   <div
+  style={{
+    backgroundImage: `url(${bgImage})`,
+  }}
+  className="flex items-center mt-15 justify-center py-16 px-4 sm:px-6 md:px-10 bg-cover bg-center"
+>
+
+
       <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-16 w-full max-w-6xl">
         
-        {/* Left Section */}
+       
         <div className="text-white space-y-8 text-center md:text-left md:w-1/2">
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
