@@ -51,7 +51,7 @@ function Contact() {
     >
       <div className="flex flex-col md:flex-row items-center md:items-center justify-between  mt-2  w-full max-w-6xl">
         
-        <div className="text-white lg:space-y-25 space-y-8 text-center md:text-left md:w-1/2">
+        <div className="text-white lg:space-y-20 space-y-8 text-center md:text-left md:w-1/2">
           <div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Get in Touch  
@@ -64,7 +64,7 @@ function Contact() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 items-center md:items-start">
+          <div className="flex flex-col gap-7  items-center md:items-start">
             <div className="flex items-center gap-3 text-gray-200 text-sm sm:text-base">
               <MdOutlineAttachEmail className="text-xl" />
               <span>abhishekkarayil@gmail.com</span>
@@ -75,7 +75,7 @@ function Contact() {
             </div>
           </div>
 
-          <div>
+          <div className="flex items-center justify-center md:items-start  gap-4 flex-col">
             <h3 className="text-gray-300 mb-3">Connect with Me</h3>
             <ul className="flex justify-center md:justify-start gap-6">
               {socialItems.map((social, index) => (
@@ -84,7 +84,7 @@ function Contact() {
                     href={social.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center text-white text-2xl hover:text-gray-300 transition-colors"
+                    className="flex items-center justify-center text-white text-xl hover:text-gray-300 transition-colors"
                   >
                     {social.icon}
                   </a>
@@ -94,7 +94,7 @@ function Contact() {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl w-full mt-2.5 sm:w-[90%] md:w-[400px] lg:w-[480px] shadow-2xl p-6 sm:p-8 md:p-10 flex-shrink-0">
+        <div className="bg-white rounded-3xl w-full mt-8 sm:w-[90%] md:w-[400px] lg:w-[480px] shadow-2xl p-6 sm:p-8 md:p-10 flex-shrink-0">
           <form ref={form} onSubmit={sendEmail} className="space-y-5">
             <input
               type="text"

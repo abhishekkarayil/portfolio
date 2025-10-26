@@ -29,10 +29,10 @@ function AboutMe() {
   return (
     <div className="lg:px-50 md:px-15 mt-15 px-2.5">
       <div className="flex justify-center flex-col items-center relative shadow-2xl rounded-2xl gap-3.5">
-        <div className="w-full hidden md:flex justify-end md:mt-8 md:pr-8 lg:mt-10 lg:pr-10 relative z-10">
+        <div className="w-full hidden md:flex justify-end md:mt-8 md:pr-8 lg:mt-10 lg:pr-10 relative ">
           <button
             onClick={handleResumeClick}
-            className="flex items-center gap-2 text-[#1E1E1E] bg-[#F5F5F5] px-4 py-1 rounded-full cursor-pointer hover:bg-[#e1dddd] transition-all relative z-10"
+            className="flex items-center gap-2 text-[#1E1E1E] bg-[#F5F5F5] px-4 py-1 rounded-full cursor-pointer hover:bg-[#e1dddd] transition-all relative "
           >
             View Resume <MdOutlineArrowOutward />
           </button>
@@ -52,10 +52,10 @@ function AboutMe() {
               />
             </div>
 
-            <div className="w-full flex md:hidden justify-center relative z-10">
+            <div className="w-full flex md:hidden justify-center relative ">
               <button
                 onClick={handleResumeClick}
-                className="flex items-center gap-2 text-[#1E1E1E] bg-[#F5F5F5] px-4 py-1 rounded-full cursor-pointer hover:bg-[#e1dddd] transition-all relative z-10"
+                className="flex items-center gap-2 text-[#1E1E1E] bg-[#F5F5F5] px-4 py-1 rounded-full cursor-pointer hover:bg-[#e1dddd] transition-all relative "
               >
                 View Resume <MdOutlineArrowOutward />
               </button>
