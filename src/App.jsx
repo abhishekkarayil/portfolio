@@ -1,15 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from 'framer-motion';
-import Home from './Components/Home/Home';
-import Contact from './Components/Contact/Contact';
-import Footer from './Components/Footer/Footer';
-import Projects from './Components/Featured-Projects/Projects.jsx';
-import Header from './Components/Header/Header';
-import Mystory from './Components/Mystory/Mystory';
-import AboutMe from "./Components/AboutMe/AboutMe.jsx";
-import Works from "./Components/Works/Works.jsx";
-import PageTransition from './Components/PageTransition/PageTransition.jsx';
+import { AnimatePresence } from "framer-motion";
+import ScrollToTop from "./Components/ScrollToTop";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Home/Home";
+import Works from "./Components/Works/Works";
+import AboutMe from "./Components/AboutMe/AboutMe";
+import Contact from "./Components/Contact/Contact";
+import Mystory from "./Components/Mystory/Mystory";
+import Projects from "./Components/Featured-Projects/Projects";
+import PageTransition from "./Components/PageTransition/PageTransition";
 
 function AppContent() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function AppContent() {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route
@@ -61,12 +63,10 @@ function AppContent() {
   );
 }
 
-function App() {
+export default function App() {
   return (
     <Router>
       <AppContent />
     </Router>
   );
 }
-
-export default App;
