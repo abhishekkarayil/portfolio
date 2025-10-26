@@ -19,50 +19,56 @@ function Header() {
   ];
 
   return (
-    <header className="flex justify-between items-center bg-white px-6 py-5 md:px-15 lg:px-50 shadow-md fixed top-0 left-0 w-full z-10">
+    <>
+      <header className="flex justify-between items-center bg-white px-6 py-5 md:px-15 lg:px-50 shadow-md fixed top-0 left-0 w-full z-[1000]">
+        
+        <div className="text-xl font-poppins tracking-widest text-gray-600">
+          PORTFOLIO
+        </div>
+
+        <nav className="hidden md:block">
+          <ul className="flex items-center">
+            {menuItems.map((item, index) => (
+              <li key={index} className="px-5">
+                <Link
+                  to={item.link}
+                  aria-label={item.ariaLabel}
+                  className={`font-medium cursor-pointer transition-all duration-300 text-[#A5A5A5] 
+                    hover:text-gray-700 hover:bg-gray-100 px-4 py-1 rounded-full 
+                    ${
+                      location.pathname === item.link
+                        ? 'text-black border border-[#1d1c1c]'
+                        : ''
+                    }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="md:hidden pointer-events-none">
+          <div className="pointer-events-auto">
+            <StaggeredMenu
+              position="left"
+              items={menuItems}
+              socialItems={socialItems}
+              displaySocials={true}
+              displayItemNumbering={true}
+              menuButtonColor="#111111"
+              openMenuButtonColor="#111111"
+              changeMenuColorOnOpen={true}
+              colors={['#B19EEF', '#5227FF']}
+              accentColor="#ff6b6b"
+              isFixed={true}
+            />
+          </div>
+        </div>
+      </header>
       
-      <div className="text-xl font-poppins tracking-widest text-gray-600">
-        PORTFOLIO
-      </div>
-
-      <nav className="hidden md:block">
-        <ul className="flex items-center">
-          {menuItems.map((item, index) => (
-            <li key={index} className="px-5">
-              <Link
-                to={item.link}
-                aria-label={item.ariaLabel}
-                className={`font-medium cursor-pointer transition-all duration-300 text-[#A5A5A5] 
-                  hover:text-gray-700 hover:bg-gray-100 px-4 py-1 rounded-full 
-                  ${
-                    location.pathname === item.link
-                      ? 'text-black border border-[#1d1c1c]'
-                      : ''
-                  }`}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div className="md:hidden w-full h-full fixed top-0 flex z-40">
-        <StaggeredMenu
-          position="left"
-          items={menuItems}
-          socialItems={socialItems}
-          displaySocials={true}
-          displayItemNumbering={true}
-          menuButtonColor="#111111"
-          openMenuButtonColor="#111111"
-          changeMenuColorOnOpen={true}
-          colors={['#B19EEF', '#5227FF']}
-          accentColor="#ff6b6b"
-          isFixed={true}
-        />
-      </div>
-    </header>
+      <div className="h-5 md:h-8"></div>
+    </>
   );
 }
 
