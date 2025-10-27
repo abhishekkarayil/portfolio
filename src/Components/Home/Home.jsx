@@ -70,7 +70,7 @@ const Home = () => {
             className='md:hidden w-full h-auto object-cover rounded-lg' 
           />
 
-          <div className='absolute bottom-45 left-2 md:bottom-41 md:left-0 lg:bottom-73'>
+          <div className='absolute bottom-45 sm:bottom-55 left-2 md:bottom-41 md:left-0 lg:bottom-73'>
             <ul className='flex gap-5 md:gap-4 lg:gap-8 rounded-full px-3 py-2 md:px-4 md:py-2 lg:px-10 lg:py-2.5'>
               {socialItems.map((social, index) => (
                 <li key={index}>

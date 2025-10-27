@@ -2,32 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import StaggeredMenu from './StaggeredMenu/StaggeredMenu';
 
+
 function Header() {
   const location = useLocation();
-  const [darkMode, setDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Load dark mode preference
+
+  // Load saved theme preference on mount
   useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode') === 'true';
-    setDarkMode(savedMode);
-    if (savedMode) {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDarkMode(true);
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
     }
   }, []);
 
+
   // Toggle dark mode
   const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    if (newMode) {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-    localStorage.setItem('darkMode', newMode.toString());
   };
+
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -36,22 +38,28 @@ function Header() {
     { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' },
   ];
 
+
   const socialItems = [
     { label: 'Twitter', link: 'https://twitter.com' },
     { label: 'GitHub', link: 'https://github.com' },
     { label: 'LinkedIn', link: 'https://linkedin.com' },
   ];
 
+
   return (
     <>
-      <header className="flex justify-between items-center bg-white dark:bg-gray-900 px-6 py-5 md:px-15 lg:px-50 shadow-md dark:shadow-gray-700 fixed top-0 left-0 w-full z-[1000] transition-colors duration-300">
+      <header className={`flex justify-between items-center px-6 py-5 md:px-15 lg:px-50 shadow-md fixed top-0 left-0 w-full z-[1000] transition-colors duration-300 ${
+        isDarkMode ? "bg-gray-900" : "bg-white"
+      }`}>
         
-        {/* Logo */}
-        <div className="text-xl font-poppins tracking-widest text-gray-600 dark:text-gray-300">
+        <div className={`text-xl font-poppins tracking-widest ${
+          isDarkMode ? "text-white" : "text-gray-800"
+        }`}>
           PORTFOLIO
         </div>
 
-        {/* Desktop/Tablet Navigation */}
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-2">
           <ul className="flex items-center">
             {menuItems.map((item, index) => (
@@ -59,11 +67,16 @@ function Header() {
                 <Link
                   to={item.link}
                   aria-label={item.ariaLabel}
-                  className={`font-medium cursor-pointer transition-all duration-300 text-[#A5A5A5] dark:text-gray-400
-                    hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 px-4 py-1 rounded-full 
+                  className={`font-medium cursor-pointer transition-all duration-300 px-4 py-1 rounded-full 
+                    ${isDarkMode 
+                      ? "text-gray-300 hover:text-white hover:bg-gray-800" 
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    }
                     ${
                       location.pathname === item.link
-                        ? 'text-black dark:text-white border border-[#1d1c1c] dark:border-gray-400'
+                        ? isDarkMode
+                          ? 'text-white border border-gray-400'
+                          : 'text-black border border-gray-800'
                         : ''
                     }`}
                 >
@@ -73,17 +86,21 @@ function Header() {
             ))}
           </ul>
 
-          {/* Dark Mode Toggle - Desktop */}
+
+          {/* Dark Mode Toggle Button - Desktop */}
           <button
             onClick={toggleDarkMode}
-            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
+            className={`ml-4 p-2 rounded-full transition-all duration-300 ${
+              isDarkMode 
+                ? "bg-gray-700 hover:bg-gray-600" 
+                : "bg-gray-200 hover:bg-gray-300"
+            }`}
+            aria-label="Toggle dark mode"
           >
-            {darkMode ? (
-              // ☀️ Sun Icon
+            {isDarkMode ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-yellow-500"
+                className="h-5 w-5 text-yellow-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -96,10 +113,9 @@ function Header() {
                 />
               </svg>
             ) : (
-              // 🌙 Moon Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-700 dark:text-gray-300"
+                className="h-5 w-5 text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -115,18 +131,23 @@ function Header() {
           </button>
         </nav>
 
+
         {/* Mobile Section */}
         <div className="md:hidden flex items-center justify-end gap-8">
-          {/* Dark Mode Toggle - Mobile */}
+          {/* Dark Mode Toggle Button - Mobile */}
           <button
             onClick={toggleDarkMode}
-            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
+            className={`p-2 rounded-full transition-all duration-300 ${
+              isDarkMode 
+                ? "bg-gray-700 hover:bg-gray-600" 
+                : "bg-gray-200 hover:bg-gray-300"
+            }`}
+            aria-label="Toggle dark mode"
           >
-            {darkMode ? (
+            {isDarkMode ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-3 w-3 text-yellow-500"
+                className="h-4 w-4 text-yellow-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -141,7 +162,7 @@ function Header() {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-3 w-3 text-gray-700 dark:text-gray-300"
+                className="h-4 w-4 text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -156,7 +177,7 @@ function Header() {
             )}
           </button>
 
-          {/* Staggered Menu */}
+
           <div className="flex items-center">
             <StaggeredMenu
               position="left"
@@ -175,9 +196,11 @@ function Header() {
         </div>
       </header>
 
+
       <div className="h-20 md:h-24"></div>
     </>
   );
 }
+
 
 export default Header;
