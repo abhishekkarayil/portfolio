@@ -1,35 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import StaggeredMenu from './StaggeredMenu/StaggeredMenu';
-
+import { useDarkMode } from '../useDarkMode/useDarkMode';
 
 function Header() {
   const location = useLocation();
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useDarkMode();
 
-
-  // Load saved theme preference on mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
-
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -38,13 +16,11 @@ function Header() {
     { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' },
   ];
 
-
   const socialItems = [
     { label: 'Twitter', link: 'https://twitter.com' },
     { label: 'GitHub', link: 'https://github.com' },
     { label: 'LinkedIn', link: 'https://linkedin.com' },
   ];
-
 
   return (
     <>
@@ -57,7 +33,6 @@ function Header() {
         }`}>
           PORTFOLIO
         </div>
-
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-2">
@@ -85,7 +60,6 @@ function Header() {
               </li>
             ))}
           </ul>
-
 
           {/* Dark Mode Toggle Button - Desktop */}
           <button
@@ -130,7 +104,6 @@ function Header() {
             )}
           </button>
         </nav>
-
 
         {/* Mobile Section */}
         <div className="md:hidden flex items-center justify-end gap-8">
@@ -177,7 +150,6 @@ function Header() {
             )}
           </button>
 
-
           <div className="flex items-center">
             <StaggeredMenu
               position="left"
@@ -196,11 +168,9 @@ function Header() {
         </div>
       </header>
 
-
       <div className="h-20 md:h-24"></div>
     </>
   );
 }
-
 
 export default Header;
